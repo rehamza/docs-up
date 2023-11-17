@@ -15,6 +15,13 @@
       "when": 1700234663131,
       "tag": "0001_smart_taskmaster",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "5",
+      "when": 1700236134067,
+      "tag": "0002_brainy_gargoyle",
+      "breakpoints": true
     }
   ]
 }
