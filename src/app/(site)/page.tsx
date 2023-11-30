@@ -4,8 +4,8 @@ import React from "react";
 import Image from "next/image";
 import Banner from "../../../public/appBanner.png";
 import Calander from "../../../public/cal.png";
-import Diamond from '../../../public/icon/diamond.svg'
-import CheckIcon from '../../../public/icon/check.svg'
+import Diamond from "../../../public/icon/diamond.svg";
+import CheckIcon from "../../../public/icon/check.svg";
 import { CLIENTS, PRICING_CARDS, PRICING_PLANS, USERS } from "@/lib/constants";
 import { index } from "drizzle-orm/mysql-core";
 import { randomUUID } from "crypto";
@@ -97,17 +97,27 @@ const Home = () => {
                 <CustomCard
                   key={testimonial.name}
                   className="w-[500px] shrink-0 rounded-xl dark:bg-gradient-to-t dark:from-border dark:to-background"
-                  cardHeader = {<div className="flex items-center gap-4">
-                    <Avatar>
+                  cardHeader={
+                    <div className="flex items-center gap-4">
+                      <Avatar>
                         <AvatarImage src={`/avatars/${index + 1}.png`} />
                         <AvatarFallback>Av</AvatarFallback>
-                    </Avatar>
-                    <div>
-                        <CardTitle className=" text-foreground">{testimonial.name}</CardTitle>
-                        <CardDescription className=" dark:text-washed-purple-800">{testimonial.name.toLocaleLowerCase()}</CardDescription>
+                      </Avatar>
+                      <div>
+                        <CardTitle className=" text-foreground">
+                          {testimonial.name}
+                        </CardTitle>
+                        <CardDescription className=" dark:text-washed-purple-800">
+                          {testimonial.name.toLocaleLowerCase()}
+                        </CardDescription>
+                      </div>
                     </div>
-                  </div>}
-                  cardContent={<p className="dark:text-washed-purple-800">{testimonial.message}</p>}
+                  }
+                  cardContent={
+                    <p className="dark:text-washed-purple-800">
+                      {testimonial.message}
+                    </p>
+                  }
                 ></CustomCard>
               ))}
             </div>
@@ -140,9 +150,9 @@ const Home = () => {
             <CustomCard
               key={card.planType}
               className={clsx(
-                'w-[300px] rounded-2xl dark:bg-black/40 background-blur-3xl relative',
+                "w-[300px] rounded-2xl dark:bg-black/40 background-blur-3xl relative",
                 {
-                  'border-brand-primaryPurple/70':
+                  "border-brand-primaryPurple/70":
                     card.planType === PRICING_PLANS.proplan,
                 }
               )}
@@ -186,7 +196,7 @@ const Home = () => {
                       /mo
                     </span>
                   ) : (
-                    ''
+                    ""
                   )}
                   <p className="dark:text-washed-purple-800">
                     {card.description}
@@ -196,8 +206,8 @@ const Home = () => {
                     className="whitespace-nowrap w-full mt-4"
                   >
                     {card.planType === PRICING_PLANS.proplan
-                      ? 'Go Pro'
-                      : 'Get Started'}
+                      ? "Go Pro"
+                      : "Get Started"}
                   </Button>
                 </CardContent>
               }
@@ -219,10 +229,7 @@ const Home = () => {
                       gap-2
                     "
                     >
-                      <Image
-                        src={CheckIcon}
-                        alt="Check Icon"
-                      />
+                      <Image src={CheckIcon} alt="Check Icon" />
                       {feature}
                     </li>
                   ))}
@@ -232,6 +239,7 @@ const Home = () => {
           ))}
         </div>
       </section>
+      
     </>
   );
 };
